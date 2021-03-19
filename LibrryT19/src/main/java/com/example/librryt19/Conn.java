@@ -78,7 +78,6 @@ public class Conn  {
                         bluetooth.writeDataToCharacteristic(bluetooth.getGatt().getServices().get(5).getCharacteristics().get(0),
                                 WristbandUtils.hexStringToByteArray(WristbandUtils.createDateHex()));
                         Commons.hasCon=true;
-                        
                     } catch (Exception e) {
                         cp.hideProgress();
                         Commons.hasCon=false;
@@ -209,5 +208,15 @@ public class Conn  {
 
             }
         }
+    }
+    public void led_Diago()
+    {
+        bluetooth.writeDataToCharacteristic(bluetooth.getGatt().getServices().get(8).getCharacteristics().get(7),
+                WristbandUtils.hexStringToByteArray("01"));
+    }
+    public void buzzer_Diago()
+    {
+        bluetooth.writeDataToCharacteristic(bluetooth.getGatt().getServices().get(8).getCharacteristics().get(8),
+                WristbandUtils.hexStringToByteArray("01"));
     }
 }

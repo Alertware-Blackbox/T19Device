@@ -62,7 +62,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity implements BleWrapperUiCallbacks, BeaconConsumer {
-    Button button,cntct;
+    Button button,cntct,btn_led,btn_buzz;
     Conn conn;
     TextView dte=null;
     private Bluetooth bluetooth=null;
@@ -174,6 +174,8 @@ public class MainActivity extends AppCompatActivity implements BleWrapperUiCallb
         conn=new Conn(this,"BC:33:AC:4A:AC:AF",bluetooth,attributes);
         button=findViewById(R.id.btn);
         cntct=findViewById(R.id.cntct);
+        btn_led=findViewById(R.id.btn_led);
+        btn_buzz=findViewById(R.id.btn_buzz);
         dte=findViewById(R.id.dte);
         cntct.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -208,6 +210,18 @@ public class MainActivity extends AppCompatActivity implements BleWrapperUiCallb
                     });
                 }
 
+            }
+        });
+        btn_led.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                conn.led_Diago();
+            }
+        });
+        btn_buzz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                conn.buzzer_Diago();
             }
         });
         rl = findViewById(R.id.Relative_One);

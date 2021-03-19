@@ -19,13 +19,27 @@
         android:layout_alignParentEnd="true"
         android:text="Contact Sync"
       />
-
+    <Button
+        android:id="@+id/btn_led"
+        android:layout_below="@+id/btn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="LED Test"
+        />
+    <Button
+        android:id="@+id/btn_buzz"
+        android:layout_below="@+id/btn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="Buzzer Test"
+        />
     <LinearLayout
         android:id="@+id/ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@+id/cntct"
+        android:layout_below="@+id/btn_buzz"
         >
 
         <TextView
